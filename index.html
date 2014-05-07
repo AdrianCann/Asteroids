@@ -18,22 +18,8 @@
     <canvas width="800" height="600"></canvas>
 
     <script>
-        // var canvas = document.getElementsByTagName("canvas")[0];
         var canvas = document.getElementsByTagName("canvas")[0];
         var ctx = canvas.getContext("2d");
-        // ctx.fillStyle = "black";
-        // ctx.beginPath(); // What does this do?
-        //
-        //
-        // ctx.arc(
-        //   200,
-        //   200,
-        //   20,
-        //   0, //What are all these values for???
-        //   2 * Math.PI,
-        //   false
-        // );
-        // ctx.fill();
         var asteroidsGame = new Asteroids.Game(canvas.getContext("2d"));
         asteroidsGame.start();
     </script>

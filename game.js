@@ -61,6 +61,7 @@
      this.draw();
      this.checkCollisions();
      this.removeBullets();
+	 this.checkWin();
 
    };
 
@@ -83,13 +84,21 @@
 
 
   }
+  
+  Game.prototype.checkWin = function(){
+	  var game = this;
+	  if(game.asteroids.length === 0){
+		  game.stop();
+		  alert("You Win!")
+	  };
+  };
 
   Game.prototype.checkCollisions = function(){
     var game = this;
     game.asteroids.forEach(function (asteroid){
       if(asteroid.isCollidedWith(game.ship)){
         game.stop();
-        alert("Ship hit! All is lost!");
+        alert("Ship hit! Sorry, you lost!");
       };
     });
   };
