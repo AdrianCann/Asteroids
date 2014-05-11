@@ -1,15 +1,5 @@
-//
-// Function.prototype.inherits = function (BaseClass) {
-//   function Surrogate () {};
-//   Surrogate.prototype = BaseClass.prototype;
-//   this.prototype = new Surrogate();
-// };
-//
-//requires Moving object
 (function (root){
    var Asteroids = root.Asteroids = (root.Asteroids || {});
-
-   //Should asteroid take pos, vel as parameters?
    var Asteroid = Asteroids.Asteroid = function (pos, vel){
     Asteroids.MovingObject.call(this, pos, vel, Asteroid.RADIUS, Asteroid.COLOR);
    };

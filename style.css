@@ -18,9 +18,37 @@ canvas {
 
 h1 {
 	text-align: center;
+	font-size: 40px;
 }
 
 h3 {
 	font-size: 30px;
+	text-align: center;
 	
+}
+
+ul li {
+	list-style: none;
+	text-align: left;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  background: #0c0;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 3px 0 0 #070;
+}
+
+input:hover {
+  background: #0b0;
+}
+
+input:active {
+  top: 3px;
+  box-shadow: none;
+  background: #0a0;
 }
