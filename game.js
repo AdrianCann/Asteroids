@@ -61,7 +61,7 @@
      this.draw();
      this.checkCollisions();
      this.removeBullets();
-	 this.checkWin();
+	 		this.checkWin();
 
    };
 
