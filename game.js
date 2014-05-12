@@ -3,20 +3,23 @@
 
 
    //Should asteroid take pos, vel as parameters?
-   var Game = Asteroids.Game = function (ctx){
+   var Game = Asteroids.Game = function (ctx, xdim, ydim){
      this.ctx = ctx;
 
-
+	   Game.DIM_X = xdim;//connect this later to canvas size
+	   Game.DIM_Y = ydim;
+	   Game.FPS = 30;
+		 
      numAsteroids = 10; //Change later
      this.asteroids = this.addAsteroids(numAsteroids);
 
      this.ship = new Asteroids.Ship([Game.DIM_X / 2, Game.DIM_Y / 2], [0,0]);
      this.bullets = [];
    };
+	 
+	
 
-   Game.DIM_X = 800;//connect this later to canvas size
-   Game.DIM_Y = 600;
-   Game.FPS = 30;
+
 
    Game.prototype.addAsteroids = function(numAsteroids) {
      var asteroids = [];
@@ -70,15 +73,15 @@
     //console.log(this.ctx);
     var game = this;
     //game.draw();
-    key('down', function(){  game.ship.power([0, 0.25]); });
+    key('k', function(){  game.ship.power([0, 0.25]); });
 
-    key('up', function(){ game.ship.power([0, -0.25]); });
+    key('i', function(){ game.ship.power([0, -0.25]); });
 
-    key('right', function(){  game.ship.power([0.25, 0]); });
+    key('l', function(){  game.ship.power([0.25, 0]); });
 
-    key('left', function(){ game.ship.power([-0.25, 0]); });
+    key('j', function(){ game.ship.power([-0.25, 0]); });
     //key('b', game.ship.power([0, 0.25]));
-    key('space', function(){ game.fireBullet(); });
+    key('a', function(){ game.fireBullet(); });
 
     nIntervId = window.setInterval(game.step.bind(game), Game.FPS);
 
@@ -98,7 +101,7 @@
     game.asteroids.forEach(function (asteroid){
       if(asteroid.isCollidedWith(game.ship)){
         game.stop();
-        alert("Ship hit! Sorry, you lost!");
+        // alert("Ship hit! Sorry, you lost!");
       };
     });
   };

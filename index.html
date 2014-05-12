@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <header>
 	<h1>Asteroids</h1>
 </header>
 <head>
+	
+	<div class="game-wrap">
     <title>Asteroids!</title>
 		
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -15,14 +18,16 @@
     <script src="bullet.js"></script>
     <script src="ship.js"></script>
     <script src="game.js"></script>
-    <canvas width="800" height="600"></canvas>
+    <canvas width="500" height="500"></canvas>
 
     <script>
         var canvas = document.getElementsByTagName("canvas")[0];
         var ctx = canvas.getContext("2d");
-        var asteroidsGame = new Asteroids.Game(canvas.getContext("2d"));
+        var asteroidsGame = new Asteroids.Game(canvas.getContext("2d"), 500, 500);
         asteroidsGame.start();
     </script>
+		
+		</div>
 </head>
 <body>
 	<h3>Controls:<h3>
@@ -32,5 +37,7 @@
 				<li>Press spacebar to fire bullets</li>
 			</ul>			
 			<input type="button" value="REPLAY" onClick="window.location.href=window.location.href">
+			
+
 </body>
 </html>

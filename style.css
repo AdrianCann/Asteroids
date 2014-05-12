@@ -1,4 +1,4 @@
-h1, h3 {
+/*h1, h3 {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -10,13 +10,13 @@ h1, h3 {
 body {
 	width: 800px;
 	height: 600px;
-}
+}*/
 canvas {
   border: 10px solid #ccc;
 	background: url('outerspace.jpg');
 }
 
-h1 {
+/*h1 {
 	text-align: center;
 	font-size: 40px;
 }
@@ -31,7 +31,7 @@ ul li {
 	list-style: none;
 	text-align: left;
 }
-
+*/
 input {
   position: relative;
   display: inline-block;
