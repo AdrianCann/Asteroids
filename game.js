@@ -100,8 +100,11 @@
     var game = this;
     game.asteroids.forEach(function (asteroid){
       if(asteroid.isCollidedWith(game.ship)){
-        game.stop();
-        // alert("Ship hit! Sorry, you lost!");
+        // game.stop();
+				
+				game.respawn();
+				
+        // RESPAWN
       };
     });
   };
@@ -109,6 +112,17 @@
   Game.prototype.stop = function(){
     clearInterval(nIntervId);
   };
+	
+	Game.prototype.respawn = function(){
+		//remove all asteroids. place ship in center. start
+		var numAsteroids = 10 //could be num asteroids missing but lets make it harder if one loses...
+		this.asteroids = this.addAsteroids(numAsteroids);
+		this.ship.pos = [250, 250];
+		this.ship.vel = [0, 0]
+		// this.start();
+
+	}
+	
 
   Game.prototype.fireBullet = function(){
     var bullet = this.ship.fireBullet();

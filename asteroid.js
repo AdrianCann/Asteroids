@@ -4,7 +4,7 @@
     Asteroids.MovingObject.call(this, pos, vel, Asteroid.RADIUS, Asteroid.COLOR);
    };
 
-    Asteroid.inherits(Asteroids.MovingObject); //Do we need Asteroids.MovingObject vs. just MovingObject
+    Asteroid.inherits(Asteroids.MovingObject); 
     Asteroid.RADIUS = 30;
     Asteroid.COLOR = "black";
 
