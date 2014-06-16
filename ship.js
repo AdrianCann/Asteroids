@@ -38,6 +38,60 @@
      };
 
    };
+	 
+   Ship.prototype.draw = function(ctx){
+
+     ctx.fillStyle = this.col;
+     ctx.beginPath();
+
+     ctx.arc(
+       this.pos[0],
+       this.pos[1],
+       this.rad,
+       0, 
+       2 * Math.PI,
+       false
+     );
+     ctx.fill();
+		 
+		 
+     ctx.fillStyle = "blue";
+		 
+		 this.drawAim(ctx);
+   };
+	 
+	 Ship.prototype.drawAim = function(ctx) {
+     ctx.fillStyle = "red"
+     ctx.beginPath();
+		 
+		 var angle = Math.atan(this.vel[1]/this.vel[0])
+		 
+		 if (this.vel[0] < 0) {
+			 //when going left
+		 	var x_pos = this.pos[0] - (this.rad * Math.cos(angle))
+			var y_pos = this.pos[1] - (this.rad * Math.sin(angle))
+		 } else {
+		 	var x_pos = this.pos[0] + (this.rad * Math.cos(angle))
+			var y_pos = this.pos[1] + (this.rad * Math.sin(angle))
+		 };
+		 
+		 
+		 
+     ctx.arc(
+       x_pos,
+       y_pos,
+       (this.rad * .2),
+       0, 
+       2 * Math.PI,
+       false
+     );
+     ctx.fill();
+		 
+		 
+     ctx.fillStyle = "red";
+	 };
+	 
+
 
 
 })(this);

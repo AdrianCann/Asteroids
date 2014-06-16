@@ -5,8 +5,8 @@
    };
 
     Asteroid.inherits(Asteroids.MovingObject); 
-    Asteroid.RADIUS = 30;
-    Asteroid.COLOR = "black";
+    Asteroid.RADIUS = 20;
+    Asteroid.COLOR = "gray";
 
     Asteroid.randomAsteroid = function(dimX, dimY){
       var y = Math.random() * dimY;
